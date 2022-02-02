@@ -1,25 +1,31 @@
-
-
 @font-face {
   font-family: 'RetroGaming';
-  src: url('../Fonts/Retro_Gaming.ttf'); /* IE9 Compat Modes */
-  src: url('../Fonts/Retro_Gaming.ttf') format('embedded-opentype'), /* IE6-IE8 */
-  url('../Fonts/Retro_Gaming.ttf') format('woff'), /* Modern Browsers */
-  url('../Fonts/Retro_Gaming.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('../Fonts/Retro_Gaming.ttf') format('svg'); /* Legacy iOS */
+  src: url('../Fonts/Retro_Gaming.ttf');
+  /* IE9 Compat Modes */
+  src: url('../Fonts/Retro_Gaming.ttf') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../Fonts/Retro_Gaming.ttf') format('woff'),
+    /* Modern Browsers */
+    url('../Fonts/Retro_Gaming.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../Fonts/Retro_Gaming.ttf') format('svg');
+  /* Legacy iOS */
 }
 
 html {
   scroll-behavior: smooth;
-  
+
   position: relative;
-  
+
 
   width: 100% !important;
   overflow-x: hidden !important;
 }
 
-.RetroGaming { font-family: Junebug; font-size: 4.2em; }
+.RetroGaming {
+  font-family: Junebug;
+  font-size: 4.2em;
+}
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -33,69 +39,156 @@ img.carouselpic {
   width: 50%;
   margin: auto;
   display: block;
-    border: 5px solid #555;
+  border: 5px solid #555;
+
+}
+
+#textohome2 {
+  text-align: center;
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 250px;
+
+  font-family: 'Montserrat';
+
+}
+
+
+#gamecontroller {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  width: 20%;
+  float: left;
+
+  padding: 5px;
+}
+
+#gym {
+  float: left;
+
+  padding: 5px;
+  width: 20%;
+
+}
+
+#overlay {
+  color: #384458;
+  position: absolute;
+  z-index: -5;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (500 - 430)));
+  font-weight: 1000;
+  text-align: center;
+  width: 100%;
+
+}
+
+#movies {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  margin-top: 3%;
+  width: 15%;
+  float: left;
+  padding: 5px;
+}
+
+#pretext {
+  font-family: RetroGaming;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: -50px;
+
 
 }
 
 .handsome {
-  width: 250px;
+  max-width: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
   border-radius: 50%;
-  border:5px solid rgb(95, 95, 95);
+  border: 5px solid rgb(216, 216, 216);
 }
 
-.item-1, 
-.item-2  
-{
+.item-1,
+.item-2 {
   position: absolute;
   display: block;
-  
-	top: 2em;
+
+  top: 2em;
   width: 30%;
-  
+
   font-size: 2em;
 
-	animation-duration: 10s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 
   text-align: center;
 
 }
 
-.item-1{
-	animation-name: anim-1;
+.item-1 {
+  animation-name: anim-1;
 }
 
-.item-2{
-	animation-name: anim-2;
+.item-2 {
+  animation-name: anim-2;
 }
 
-.img3{
+.img3 {
   display: block;
   max-height: 50%;
   max-width: 30%;
   border-radius: 50%;
-  border:5px solid rgb(95, 95, 95);
+  border: 5px solid rgb(95, 95, 95);
 }
 
+.pdfdownload {
+  align-self: center;
+  margin: auto;
+  max-width: 200px;
+}
 
 @keyframes anim-1 {
-	0%, 20% { left: -100%; opacity: 0; }
-  20%,40% { left: 35%; opacity: 1; }
-  50%, 100% { left: 110%; opacity: 0; }
+  0%, 20% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  20%, 40% {
+    left: 35%;
+    opacity: 1;
+  }
+
+  50%, 100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
 
 @keyframes anim-2 {
-	0%, 50% { left: -100%; opacity: 0; }
-    74.96%, 91.62% { left: 35%; opacity: 1; }
-    100% { left: 110%; opacity: 0; }
+  0%, 50% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  74.96%, 91.62% {
+    left: 35%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
 
 
-.hometext
-{
+.hometext {
   text-align: center;
-  margin: auto ;
+  margin: auto;
   max-width: 80%;
   max-height: 250px;
 
@@ -106,40 +199,251 @@ img.carouselpic {
 }
 
 
-.logo{
+.logo {
   border-radius: 50%;
 }
 
 h1 {
   font-family: RetroGaming;
-  color:#526583;
+  color: #526583;
   margin: 80px;
   margin-bottom: 50px;
   display: block;
   text-align: center;
-  text-shadow: 13px 13px 10px #000000;
 }
 
-.traveler{
+.introduction {
+  font-family: RetroGaming;
+  color: #ffffff;
+  margin: auto;
+  margin-bottom: 50px;
+  display: block;
+  text-align: center;
+}
+
+.boxhead a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.boxhead a:hover {
+  color: #00B7FF;
+}
+
+.constellation {
+  max-height: 40%;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+
+  position: fixed;
+  animation:
+    move-x-later 30s linear infinite,
+    move-y-later 30s linear infinite;
+
+  z-index: -10;
+
+}
+
+.features {
+  margin: 2.5em 0;
+  position: relative;
+  z-index: 1;
+}
+
+.features {
+  color: #fff;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  border: solid 1 px #ffffff;
+  border-radius: 4 px;
+}
+
+
+.vl {
+  border-left: 6px solid #ddd;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+}
+
+table {
+  width: 20%;
+  max-width: 20%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: 4px;
+  border-spacing: 0px;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  color: #ddd;
+  font-size: 20px;
+}
+
+th, td {
+  padding: 15px 14px 16px 14px;
+  text-align: center;
+  vertical-align: top;
+  border-left: 1px solid #ddd;
+}
+
+td {
+  border-top: 1px solid #ddd;
+}
+
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+  border-radius: 4px 0 0 0;
+}
+
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 4px;
+}
+
+.constellation2 {
+  max-height: 40%;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+
+  position: fixed;
+  animation:
+    move-x 60s linear infinite,
+    move-y 60s linear infinite;
+
+  z-index: -10;
+
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("../images/programming.jpg");
+
+  /* Add the blur effect */
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+
+  /* Full height */
+  height: 500px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text2 {
+  background-color: #1e262c;
+  /* Fallback color */
+  background-color: #1e262c;
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border-top: 3px solid #70726F;
+  border-bottom: 3px solid #70726F;
+
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  margin-top: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  margin-top: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  margin: 0 auto;
+  color: #70726F;
+  font-size: 100px;
+  padding: 10px;
+  border-left: 1px solid #70726F;
+  border-right: 1px solid #70726F;
+  transition: all .5s ease;
+
+}
+
+.contactcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.servicesBody {
+  margin: auto;
+  display: inline-block;
+  background-color: #000;
+  width: 100%;
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+
+
+.carouselpict {
+  height: 700px;
+  border-bottom: 150px solid rgb(0, 0, 0);
+
+}
+
+.traveler {
   position: fixed;
   animation: rotation 25s linear infinite;
-  left: -30%;
-  bottom: -60%;
-  min-width: 70%;
+  left: -10%;
+  min-width: 20%;
   z-index: -10;
 }
 
-.spaceparent{
+.spaceparent {
   position: fixed;
   z-index: -10;
 
 }
 
-.spacecircle{
+.spacecircle {
   position: fixed;
-  max-width: 100%;
+  max-width: 90%;
   bottom: -100%;
-  left: -45%;
+  left: -40%;
   z-index: -10;
   animation: reverseRotation 25s linear infinite;
 
@@ -152,6 +456,7 @@ h1 {
     transform: rotate(0deg);
 
   }
+
   to {
     transform: rotate(359deg);
 
@@ -163,19 +468,21 @@ h1 {
     transform: rotate(0deg);
 
   }
+
   to {
     transform: rotate(-359deg);
 
   }
 }
-.stars{
+
+.stars {
   position: fixed;
-  animation: 
-    move-x 35s linear infinite, 
-    move-y 35s linear infinite;
+  animation:
+    move-x 30s linear infinite,
+    move-y 30s linear infinite;
   font-size: 1.4rem;
   z-index: -10;
-  
+
 }
 
 
@@ -186,20 +493,24 @@ h1 {
     transform: rotate(0deg);
 
   }
+
   25% {
     left: 50%;
     animation-timing-function: ease-out;
   }
+
   50% {
     left: 100%;
     animation-timing-function: ease-in;
   }
+
   75% {
     left: 50%;
     animation-timing-function: ease-out;
   }
+
   100% {
-    left: 0%;
+    left: 100%;
     animation-timing-function: ease-in;
     transform: rotate(359deg);
 
@@ -211,31 +522,148 @@ h1 {
     top: 100%;
     animation-timing-function: ease-out;
   }
+
   25% {
     top: 0;
     animation-timing-function: ease-in;
   }
+
   50% {
     top: 100%;
     animation-timing-function: ease-out;
   }
+
   75% {
     top: 100%;
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    top: 0;
     animation-timing-function: ease-in;
   }
-  100% {
-    top: 100%;
+}
+
+
+
+@keyframes move-x-later {
+  0% {
+    left: 50%;
+    animation-timing-function: ease-in;
+    transform: rotate(0deg);
+
+  }
+
+  25% {
+    left: 100%;
     animation-timing-function: ease-out;
+  }
+
+  50% {
+    left: 150%;
+    animation-timing-function: ease-in;
+  }
+
+  75% {
+    left: 100%;
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    left: 150%;
+    animation-timing-function: ease-in;
+    transform: rotate(359deg);
+
+  }
+}
+
+@keyframes move-y-later {
+  0% {
+    top: 150%;
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    top: 50%;
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    top: 150%;
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    top: 150%;
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    top: 50%;
+    animation-timing-function: ease-in;
   }
 }
 
 h5 {
   font-family: RetroGaming;
-  color:#6b7379;
+  color: #6b7379;
   margin: 20px;
   display: block;
   text-align: center;
 }
+
 a {
   color: #00B7FF;
+}
+
+.page-landing #banner .inner .features li {
+  display: inline-block;
+  width: 10em;
+  -moz-perspective: 300px;
+  -webkit-perspective: 300px;
+  -ms-perspective: 300px;
+  perspective: 300px;
+}
+
+.page-landing #banner .inner .features li:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'px';
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+.page-landing #banner .inner .features li span {
+  font-size: 1.1em;
+  letter-spacing: -0.01em;
+  line-height: 1.65em;
+  font-weight: 400;
+  line-height: 1.35em;
+  display: block;
+  padding: 1em 0;
+  border-right: solid 1px #fff
+}
+
+.page-landing #banner .inner .features li:before {
+  display: block;
+  border: solid 1px #fff;
+  border-left-width: 0;
+  font-size: 60px;
+  line-height: 1em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.page-landing #banner .inner .features li:first-child:before {
+  border-left-width: 1px;
+  border-radius: 6px 0 0 6px
+}
+
+.page-landing #banner .inner .features li:last-child span {
+  border-right-width: 0
+}
+
+.page-landing #banner .inner .features li:last-child:before {
+  border-radius: 0 6px 6px 0
 }
