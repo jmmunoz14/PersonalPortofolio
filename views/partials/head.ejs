@@ -16,46 +16,86 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " role="navigation">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
 
       <img src="/images/traveler3.png" class="logo" alt="" width="100" height="100">
 
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <% if(title=='My portfolio' ){ %>
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <% } else{ %>
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-            <% } %>
-              <% if(title=='About Me' ){ %>
-                <a class="nav-link active" href="/aboutme">About me</a>
-                <% } else{ %>
-                  <a class="nav-link" href="/aboutme">About me</a>
-                  <% } %>
-                    <% if(title=='My Projects' ){ %>
-                      <a class="nav-link active" href="/projects">Projects page</a>
-                      <% } else{ %>
-                        <a class="nav-link" href="/projects">Projects page</a>
-                        <% } %>
-                          <% if(title=='My Services' ){ %>
-                            <a class="nav-link active" href="/services">Services page</a>
-                            <% } else{ %>
-                              <a class="nav-link" href="/services">Services page</a>
-                              <% } %>
-                                <% if(title=='Contact me' ){ %>
-                                  <a class="nav-link active" href="/contactme">Contact Me</a>
-                                  <% } else{ %>
-                                    <a class="nav-link" href="/contactme">Contact Me</a>
-                                    <% } %>
 
-      </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <% if(title=='My portfolio' ){ %>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <% } else{ %>
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+              <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=='About Me' ){ %>
+            <a class="nav-link active" href="/aboutme">About me</a>
+            <% } else{ %>
+              <a class="nav-link" href="/aboutme">About me</a>
+              <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=='My Projects' ){ %>
+            <a class="nav-link active" href="/projects">Projects page</a>
+            <% } else{ %>
+              <a class="nav-link" href="/projects">Projects page</a>
+              <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=='My Services' ){ %>
+            <a class="nav-link active" href="/services">Services page</a>
+            <% } else{ %>
+              <a class="nav-link" href="/services">Services page</a>
+              <% } %>
+        </li>
+        <li class="nav-item">
+          <% if(title=='Contact me' ){ %>
+            <a class="nav-link active" href="/contactme">Contact Me</a>
+            <% } else{ %>
+              <a class="nav-link" href="/contactme">Contact Me</a>
+              <% } %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dpmenu" style="margin-top: 10px;"
+            aria-labelledby="dropdownMenuButton1">
+            <form class="form" role="form">
+              <div class="form-group">
+                <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text">
+              </div>
+              <div class="form-group">
+                <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-primary btn-block loginbtn">Login</button>
+              </div>
+              <div class="form-group text-xs-center">
+                <small><a href="#">Forgot password?</a></small>
+              </div>
+            </form>
+          </ul>
+
+        </li>
+      </ul>
     </div>
   </div>
+
+
 </nav>
