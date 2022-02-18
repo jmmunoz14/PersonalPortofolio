@@ -1,4 +1,4 @@
-let password = "<InsertPasswordHere>"
+let password = "193E5xm128oLAMxB"
 let URI = "mongodb+srv://dbadmin:" + password + "@cluster0.kdkux.mongodb.net/mydb?retryWrites=true&w=majority";
 let mongoose = require('mongoose');
 

@@ -6,16 +6,25 @@
  */
 
 exports.home = function (req, res, next) {
-    res.render('index', { title: 'My portfolio' });
+    res.render('index', {
+        title: 'My portfolio',
+        userName: req.user ? req.user.username : ''
+    });
 }
 
 exports.handleForm = function (req, res, next) {
-    res.render('index', { title: 'My portfolio' });
+    res.render('index', {
+        title: 'My portfolio',
+        userName: req.user ? req.user.username : ''
+    });
     console.log(req.body.fname) // input information.
 }
 
 exports.aboutme = function (req, res, next) {
-    res.render('aboutMe', { title: 'About Me' });
+    res.render('aboutMe', {
+        title: 'About Me',
+        userName: req.user ? req.user.username : ''
+    });
 }
 
 exports.downloadcv = function (req, res, next) {
@@ -23,9 +32,15 @@ exports.downloadcv = function (req, res, next) {
 }
 
 exports.projects = function (req, res, next) {
-    res.render('projects', { title: 'My Projects' });
+    res.render('projects', {
+        title: 'My Projects',
+        userName: req.user ? req.user.username : ''
+    });
 }
 
 exports.services = function (req, res, next) {
-    res.render('services', { title: 'My Services' });
+    res.render('services', {
+        title: 'My Services',
+        userName: req.user ? req.user.username : ''
+    });
 }

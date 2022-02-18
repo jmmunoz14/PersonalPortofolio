@@ -4,7 +4,8 @@ let passport = require('passport');
 exports.user = function (req, res, next) {
     res.render('user', {
         title: 'Users',
-        name: 'Student'
+        userName: req.user ? req.user.username : ''
+
     });
 }
 
@@ -32,16 +33,20 @@ function getErrorMessage(err) {
 };
 
 module.exports.renderSignup = function (req, res, next) {
+    if (req.user) {
+        return res.redirect('/');
+    }
     if (!req.user) {
 
-        console.log("holaa 1")
-        // creates a empty new user object.
+        console.log("renders ok")
         let newUser = User();
 
         res.render('auth/signup', {
             title: 'Sign-up Form',
             messages: req.flash('error'),
-            user: newUser
+            user: newUser,
+            userName: req.user ? req.user.username : ''
+
         });
 
     } else {
@@ -54,13 +59,11 @@ module.exports.renderSignup = function (req, res, next) {
 module.exports.signup = function (req, res, next) {
 
     if (!req.user) {
-        console.log("Hola")
+        console.log("sign up")
 
-        console.log(req.params);
+        console.log(req.body);
 
         let user = new User(req.body);
-
-        console.log(user);
 
         user.save((err) => {
             if (err) {
@@ -70,7 +73,9 @@ module.exports.signup = function (req, res, next) {
                 return res.render('auth/signup', {
                     title: 'Sign-up Form',
                     messages: req.flash('error'),
-                    user: user
+                    user: user,
+                    userName: req.user ? req.user.username : ''
+
                 });
             }
             req.login(user, (err) => {
@@ -86,19 +91,6 @@ module.exports.signup = function (req, res, next) {
 };
 
 
-module.exports.renderSignin = function (req, res, next) {
-    if (!req.user) {
-        res.render('auth/signin', {
-            title: 'Sign-in Form',
-            messages: req.flash('error') || req.flash('info')
-        });
-    } else {
-        console.log(req.user);
-        return res.redirect('/');
-    }
-};
-
-
 module.exports.signin = function (req, res, next) {
     passport.authenticate('local', {
         successRedirect: req.session.url || '/',
@@ -109,7 +101,23 @@ module.exports.signin = function (req, res, next) {
 }
 
 
+module.exports.renderSignin = function(req, res, next) {
+    if (!req.user) {
+      res.render('auth/signin', {
+        title: 'Sign-in Form',
+        messages: req.flash('error') || req.flash('info'),
+        userName: req.user ? req.user.username : ''
+
+      });
+    } else {
+      console.log(req.user);
+      return res.redirect('/');
+    }
+  };
+
+
 module.exports.signout = function (req, res, next) {
+    console.log("outtt")
     req.logout();
     res.redirect('/');
 };

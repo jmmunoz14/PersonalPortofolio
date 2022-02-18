@@ -1,0 +1,55 @@
+<%- include ../partials/head.ejs %>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <h1>
+                        <%= title %>
+                    </h1>
+
+                    <form class="form" method="POST">
+                        <div class="form-group">
+                            <input type="hidden" name="id" value="<%= contact._id %>">
+                            
+                            <label for="nameTextField">Contact Name</label>
+                            <input type="text" class="form-control" id="nameTextField"
+                                placeholder="Enter the contact name" name="name" value="<%= contact.name %>" required>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="numberTextField">Contact number</label>
+                            <input type="text" class="form-control" id="numberTextField" placeholder="+xx xxxxxxxxx"
+                                name="number" value="<%= contact.number %>" required>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="emailTextField">Contact email</label>
+                            <input type="text" class="form-control" id="emailTextField" placeholder="Enter an email"
+                                name="email" value="<%= contact.email %>">
+                        </div>
+                        <br />
+
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-edit"></i>
+                            Submit
+                        </button>
+
+                        <a href="/list" class="btn btn-warning">
+                            <i class="fas fa-undo"></i>
+                            Cancel
+                        </a>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <% include ../partials/scripts.ejs %>
+    </body>
+    <!-- Content for the Add_Edit page -->
+
+
+
+    <%- include ../partials/footer.ejs %>

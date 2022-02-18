@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head.ejs %>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div>
+                <h1>
+                    <%= title %>
+                </h1>
+                <% for(var i in messages) { %>
+                    <div class="flash">
+                        <%= messages[i] %>
+                    </div>
+                    <% } %>
+                        <form action="/users/signin" method="post">
+                            <div class="form-group">
+                                <label style="color: aliceblue;">Username:</label>
+                                <input type="text" name="username" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label style="color: aliceblue;">Password:</label>
+                                <input type="password" name="password" class="form-control" />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" value="Sign In" />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <a href="/users/signup" style="text-decoration: none">
+                                    Create a new account
+                                </a>
+                            </div>
+                        </form>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <% include ../partials/scripts.ejs %>
+</body>
+
+<% include ../partials/footer.ejs %>
+
+</html>
