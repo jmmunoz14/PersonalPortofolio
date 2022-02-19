@@ -44,8 +44,24 @@ UserSchema.virtual('fullName')
   });
 
 // Middleware pre
+
+
+UserSchema.methods.hashPassword = function (password) {
+  console.log('The user pass "' + password + '" is here');
+  return crypto.pbkdf2Sync(password, this.salt, 10000, 64, 'sha512').toString('base64');
+};
+
+UserSchema.methods.authenticate = function (password) {
+  return this.password === this.hashPassword(password);
+};
+
+
 UserSchema.pre('save', function (next) {
+  console.log("line 48")
+  console.log(this.password)
+
   if (this.password) {
+    console.log("line 50")
     this.salt = Buffer.from(crypto.randomBytes(16).toString('base64'), 'base64');
     this.password = this.hashPassword(this.password);
   }
@@ -57,12 +73,7 @@ UserSchema.post('save', function (next) {
   console.log('The user "' + this.username + '" details were saved.');
 });
 
-UserSchema.methods.hashPassword = function (password) {
-  return crypto.pbkdf2Sync(password, this.salt, 10000, 64, 'sha512').toString('base64');
-};
 
-UserSchema.methods.authenticate = function (password) {
-  return this.password === this.hashPassword(password);
-};
+
 
 module.exports = mongoose.model('user', UserSchema);

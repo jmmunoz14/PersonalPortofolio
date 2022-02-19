@@ -63,7 +63,13 @@ module.exports.signup = function (req, res, next) {
 
         console.log(req.body);
 
-        let user = new User(req.body);
+        let user = new User({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.sign_up_password
+        });
 
         user.save((err) => {
             if (err) {
@@ -101,19 +107,19 @@ module.exports.signin = function (req, res, next) {
 }
 
 
-module.exports.renderSignin = function(req, res, next) {
+module.exports.renderSignin = function (req, res, next) {
     if (!req.user) {
-      res.render('auth/signin', {
-        title: 'Sign-in Form',
-        messages: req.flash('error') || req.flash('info'),
-        userName: req.user ? req.user.username : ''
+        res.render('auth/signin', {
+            title: 'Sign-in Form',
+            messages: req.flash('error') || req.flash('info'),
+            userName: req.user ? req.user.username : ''
 
-      });
+        });
     } else {
-      console.log(req.user);
-      return res.redirect('/');
+        console.log(req.user);
+        return res.redirect('/');
     }
-  };
+};
 
 
 module.exports.signout = function (req, res, next) {
