@@ -1,5 +1,4 @@
-let password = "193E5xm128oLAMxB"
-let URI = "mongodb+srv://dbadmin:" + password + "@cluster0.kdkux.mongodb.net/mydb?retryWrites=true&w=majority";
+let URI = process.env.MONGODB_URI
 let mongoose = require('mongoose');
 
 module.exports = function () {
