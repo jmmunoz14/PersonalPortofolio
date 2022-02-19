@@ -5,7 +5,7 @@ let mongoose = require('mongoose')
 let Contacts = require('../models/contacts')
 
 exports.list = function (req, res, next) {
-    Contacts.find().sort('name').exec((err, contactList) => {
+    Contacts.find({"emailAssociated":req.user.email}).sort('name').exec((err, contactList) => {
         if (err) {
             return console.error(err)
         }
@@ -40,6 +40,7 @@ module.exports.processAddPage = (req, res, next) => {
         name: req.body.name,
         number: req.body.number,
         email: req.body.email,
+        emailAssociated: req.user.email
     });
 
     Contacts.create(newItem, (err, item) => {
