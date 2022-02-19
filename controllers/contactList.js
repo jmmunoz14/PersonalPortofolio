@@ -88,7 +88,7 @@ module.exports.processEditPage = (req, res, next) => {
         email: req.body.email,
     });
 
-    Inventory.updateOne({ _id: id }, updatedContact, (err) => {
+    Contacts.updateOne({ _id: id }, updatedContact, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
