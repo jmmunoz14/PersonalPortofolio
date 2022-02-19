@@ -1,4 +1,4 @@
-let URI = "mongodb+srv://dbadmin:PCQkrE2FNk5JXAHL@cluster0.kdkux.mongodb.net/mydb?retryWrites=true&w=majority";
+let URI = process.env.MONGODB_URI
 let mongoose = require('mongoose');
 
 module.exports = function () {
