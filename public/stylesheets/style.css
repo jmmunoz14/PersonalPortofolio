@@ -42,12 +42,26 @@ html {
   font-size: 4.2em;
 }
 
-.dpmenu{
+.dpmenu {
   padding: 10px;
 }
 
-.flash{
+.flash {
   color: red;
+}
+
+.card-1 {
+  margin-top: 3%;
+  min-width: 100%;
+}
+
+.centeredContent {
+  margin: auto;
+  padding: 3%;
+}
+
+.tablewidth {
+  width: 50%;
 }
 
 body {
@@ -490,10 +504,21 @@ button[type=submit]:hover {
   padding: 20px;
 }
 
+.whitetext {
+  color: aliceblue;
+}
+
+.btn-warning {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+}
 
 #myFooter {
-  flex: 0 0 auto;
-  -webkit-flex: 0 0 auto;
+  width: 100%;
+  bottom: 0;
 }
 
 #myFooter .container {

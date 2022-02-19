@@ -27,18 +27,30 @@ function requireAuth(req, res, next) {
 /**
  * GET contacts from db
  */
-router.get('/', requireAuth , contactListController.list);
+router.get('/', requireAuth, contactListController.list);
 
-/* GET Route for displaying the Add page - CREATE Operation */
+/**
+ * GET Route for displaying the Add page - CREATE Operation
+ */
 router.get('/add', requireAuth, contactListController.displayAddPage);
-/* POST Route for processing the Add page - CREATE Operation */
+
+/**
+ * POST Route for processing the Add page - CREATE Operation 
+ */
 router.post('/add', requireAuth, contactListController.processAddPage);
 
-// Routers for edit
+/**
+ * GET Route for edit a contact
+ */
 router.get('/edit/:id', requireAuth, contactListController.displayEditPage);
+/**
+ * POST Route for edit a contact
+ */
 router.post('/edit/:id', requireAuth, contactListController.processEditPage);
 
-// Delete
+/**
+ * GET Route for deleting a contact
+ */
 router.get('/delete/:id', requireAuth, contactListController.performDelete);
 
 module.exports = router;

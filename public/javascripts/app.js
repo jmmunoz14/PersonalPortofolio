@@ -7,11 +7,6 @@ if(getTitle == "Sign-up Form")
     confirm.addEventListener('change', onChange); 
 }
 
-if(getloginDisplay == 'true')
-{
-  
-}
-
 
 function onChange() {
     const password = document.querySelector('input[name=sign_up_password]');
